@@ -1,2 +1,5 @@
 # Shouiia-site
-repository for my portfolio &amp; personal webpage 
+
+This repository contains my personal webpage.  
+It was made with AI assistance from Claude Code.  
+I do not intend for this to be a portfolio project, and I am not a web programmer.
