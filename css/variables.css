@@ -1,0 +1,15 @@
+:root{
+  --bg-void:#060f1a;
+  --bg-deep:#0A1828;
+  --bg-panel:#0e2033;
+  --bg-card:#122840;
+  --line:rgba(23,133,130,0.22);
+  --cyan:#178582;
+  --cyan-dim:#0f5f5c;
+  --pink:#BFA181;
+  --amber:#d9c39c;
+  --text:#e9eef2;
+  --text-dim:#92a3ae;
+  --text-faint:#5a6b76;
+  --radius:2px;
+}

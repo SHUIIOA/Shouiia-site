@@ -1,0 +1,5 @@
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .view.active, .detail.active, .post-detail.active{animation:none;}
+  .capsule:hover{transform:none;}
+}

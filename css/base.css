@@ -1,0 +1,76 @@
+/* ---------- reset & typography ---------- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg-void);
+  color:var(--text);
+  font-family:'IBM Plex Sans', sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:'Space Grotesk', sans-serif;
+  margin:0;
+  letter-spacing:0.2px;
+}
+a{color:inherit;text-decoration:none;}
+.mono{font-family:'IBM Plex Mono', monospace;}
+::selection{background:var(--pink);color:#05070f;}
+a:focus-visible, button:focus-visible, .tab:focus-visible, .card:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+}
+
+/* ---------- starfield backdrop ---------- */
+#stars{
+  position:fixed; inset:0; z-index:0;
+  background:var(--bg-void);
+}
+
+/* ---------- page scaffold ---------- */
+main{position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 24px 80px;}
+.view{display:none;}
+.view.active{display:block; animation:fadeIn .35s ease both;}
+@keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+/* ---------- shared text / buttons ---------- */
+.eyebrow{font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--pink); margin-bottom:14px;}
+.btn{
+  font-family:'Space Grotesk'; font-weight:500; font-size:14px;
+  padding:11px 20px; border-radius:var(--radius); cursor:pointer;
+  border:1px solid transparent;
+}
+.btn-primary{background:#146664; color:#e9eef2;}
+.btn-primary:hover{background:var(--cyan);}
+.btn-ghost{border-color:var(--line); color:var(--text); background:transparent;}
+.btn-ghost:hover{border-color:var(--cyan-dim); color:var(--text);}
+
+/* ---------- shared page header (Trayectoria / Proyectos / Bitácora) ---------- */
+.page-title{padding:44px 0 8px;}
+.page-title h2{font-size:28px;}
+.page-title p{color:var(--text-dim); margin-top:10px; font-size:14.5px; max-width:60ch;}
+
+/* ---------- shared stack chips ---------- */
+.stack-row{display:flex; gap:6px; margin-top:12px; flex-wrap:wrap;}
+.stack-chip{
+  font-family:'IBM Plex Mono'; font-size:10.5px; color:var(--cyan-dim);
+  border:1px solid var(--line); padding:2px 7px; border-radius:2px;
+}
+
+/* ---------- shared card artwork (used by home rail + projects grid) ---------- */
+.capsule-art{
+  height:130px; position:relative;
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(120% 140% at 30% 20%, var(--art-a) 0%, var(--art-b) 40%, #05070f 100%);
+}
+.capsule-art .tag{
+  position:absolute; top:8px; left:8px; font-family:'IBM Plex Mono'; font-size:10.5px;
+  background:rgba(5,7,15,0.85); border:1px solid var(--line); padding:3px 7px; border-radius:2px;
+  color:var(--amber);
+}
+.capsule-art svg{width:44px; height:44px; opacity:.75;}
+.capsule-body{padding:14px 16px 16px;}
+.capsule-body h3{font-size:15.5px; font-weight:600;}
+.capsule-body p{font-size:12.5px; color:var(--text-dim); margin-top:6px;}
