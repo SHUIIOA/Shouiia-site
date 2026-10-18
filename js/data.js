@@ -1,26 +1,26 @@
 export const projects = [
- /* {
-    id:"netsim-orbital",
-    name:"NetSim Orbital",
+  {
+    id:"Shoulla-webpage",
+    name:"Shoulla portafolio",
     tag:"DESTACADO",
-    cat:"sistemas",
-    short:"Panel de simulación de topologías de red con métricas en vivo.",
-    desc:"Herramienta para levantar laboratorios de red virtualizados y observar el comportamiento de una topología antes de tocar hardware real: latencia, saturación de enlaces y fallos simulados.",
-    stack:["Python","Virtualización","Redes"],
+    cat:"web",
+    short:"Página web para portafolio de trabajo y blog personal.",
+    desc:"Página web que sirve como portafolio y a su vez un lugar para documentar mi proceso de aprendizaje en mis áreas de interés.",
+    stack:["HTML","JavaScript","Css"],
     status:"En desarrollo activo",
     colorA:"#0e2a29", colorB:"#0A1828",
-    specs:[["Rol","Autor único"],["Stack","Python, libvirt, Chart.js"],["Estado","Beta interna"],["Repo","github.com/SHUIIOA/netsim-orbital"]]
-  }*/
+    specs:[["Rol","Autor único"],["Stack","HTML, JavaScript, Css"],["Estado","Desarrollo Activo"],["Repo","https://github.com/SHUIIOA/Shouiia-site"]]
+  }
 ];
 
 export const posts = [
-  /*{
-    id:"ssh-monorepo",
-    date:"2026-08-24",
-    title:"Configurando SSH para un repo estilo monorepo",
-    tag:"sistemas",
-    excerpt:"Cómo dejé llaves ed25519 y ssh-agent funcionando sin fricción en Windows.",
-    content:"<p>Documentando el proceso de dejar una llave ed25519 lista para GitHub en Windows, con ssh-agent en arranque automático. Nada del otro mundo, pero es la clase de configuración que se me olvida cada vez que reinstalo el sistema.</p><p>La parte que más tiempo me tomó no fue generar la llave, sino decidir cómo estructurar el .gitignore en dos niveles para un repo con más de un paquete adentro.</p>"
-  }*/ 
+  {
+    id:"github-pages",
+    date:"2026-10-18",
+    title:"Configurando DNS para hostear una página web en Github Pages",
+    tag:"web",
+    excerpt:"Problemas que tuve al intentar configurar una DNS para una página web por primera vez",
+    content:"<p>Documentando el proceso de deployment de una pagina web en Github Pages. Nada del otro mundo, pero es la clase de cosas que se pueden volver innecesariamente complejas.</p><p>La parte que más tiempo me tomó fue configurar correctamente la DNS para verificar el dominio en github, el hosting donde compre el dominio no tenía correctamente configurados los nameservers, me tomó un tiempo darme cuenta de que esa era la falla.</p>"
+  }
   
 ];
