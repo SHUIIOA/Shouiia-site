@@ -2,7 +2,7 @@ export const profile = {
   /* Ruta de la foto de la biografia (opcional).
      Ejemplo: "assets/img/perfil/sergio-ulloa.webp"
      Si queda vacia se mantiene el placeholder "Foto pendiente". */
-  photo:"",
+  photo:"assets/img/perfil/prof.jpg",
   photoAlt:"Sergio Ulloa"
 };
 

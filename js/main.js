@@ -10,6 +10,7 @@ import { imgTag } from './modules/util.js';
 function initProfilePhoto(){
   const host = document.getElementById('profile-photo');
   if(!host || !profile.photo) return;
+  host.classList.add('has-photo');
   host.insertAdjacentHTML('afterbegin', imgTag(profile.photo, profile.photoAlt, { className:'profile-photo-img', eager:true }));
 }
 
