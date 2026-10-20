@@ -41,6 +41,7 @@ main{position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 24
   font-family:'Space Grotesk'; font-weight:500; font-size:14px;
   padding:11px 20px; border-radius:var(--radius); cursor:pointer;
   border:1px solid transparent;
+  display:inline-block; text-align:center;
 }
 .btn-primary{background:#146664; color:#e9eef2;}
 .btn-primary:hover{background:var(--cyan);}
