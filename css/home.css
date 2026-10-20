@@ -11,20 +11,25 @@
 
 /* ---------- about brief (top of home) ---------- */
 .about-brief{
-  display:grid; grid-template-columns:0.9fr 1.1fr; gap:44px; align-items:center;
+  /* la foto y el texto se centran como un bloque, no pegados a la izquierda */
+  display:grid; grid-template-columns:200px 480px; gap:36px;
+  align-items:start; justify-content:center;
 }
 .about-brief-top{
   padding:64px 0 52px; border-bottom:1px solid var(--line);
 }
 .about-photo{
-  aspect-ratio:4/5; border:1px dashed var(--line); border-radius:var(--radius);
+  aspect-ratio:1/1; width:100%;
+  border:1px dashed var(--line); border-radius:var(--radius);
   display:flex; align-items:center; justify-content:center;
-  background:var(--bg-panel);
+  background:var(--bg-panel); overflow:hidden;
 }
+/* con foto real el borde deja de ser un marcador de posicion */
+.about-photo.has-photo{border-style:solid;}
 .about-photo span{font-family:'IBM Plex Mono'; font-size:12px; color:var(--text-faint);}
 .about-text .eyebrow{margin-bottom:12px;}
-.about-text h2{font-size:24px; font-weight:600;}
-.about-text p{color:var(--text-dim); font-size:14.5px; margin-top:14px; max-width:48ch;}
+.about-text h2{font-size:26px; font-weight:600;}
+.about-text p{color:var(--text-dim); font-size:14.5px; margin-top:14px; max-width:56ch;}
 .about-text .btn{margin-top:22px;}
 
 /* ---------- featured projects rail ---------- */
@@ -61,11 +66,12 @@
 .post-mini p{font-size:12.5px; color:var(--text-dim); margin-top:6px;}
 
 @media (max-width:860px){
-  .about-brief{grid-template-columns:1fr;}
-  .about-photo{max-width:220px; margin:0 auto; aspect-ratio:1/1;}
+  .about-brief{grid-template-columns:1fr; gap:28px; text-align:center;}
+  .about-photo{max-width:200px; margin:0 auto;}
+  .about-text p{margin-left:auto; margin-right:auto;}
 }
 @media (max-width:560px){
   .section{padding:36px 0;}
   .about-brief-top{padding:40px 0 32px;}
-  .about-photo{max-width:180px;}
+  .about-photo{max-width:170px;}
 }
