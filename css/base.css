@@ -22,6 +22,9 @@ a:focus-visible, button:focus-visible, .tab:focus-visible, .card:focus-visible{
   outline:2px solid var(--cyan);
   outline-offset:3px;
 }
+/* los paneles de las pestañas son focusables (tabindex=0): indicador
+   discreto por dentro, sin el marco exterior que rompería el layout */
+.view:focus-visible{outline:1px solid var(--cyan-dim); outline-offset:-1px;}
 
 /* ---------- starfield backdrop ---------- */
 #stars{
