@@ -1,6 +1,6 @@
-<section class="view active" id="view-home">
+<section class="view active" id="view-home" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
   <div class="about-brief about-brief-top">
-    <div class="about-photo">
+    <div class="about-photo" id="profile-photo">
       <span>Foto pendiente</span>
     </div>
     <div class="about-text">
@@ -16,7 +16,7 @@
   <div class="section">
     <div class="section-head">
       <h2>Proyectos destacados</h2>
-      <span class="see-all" data-goto="projects">Ver todos →</span>
+      <button class="see-all" data-goto="projects">Ver todos →</button>
     </div>
     <div class="rail" id="featured-rail"></div>
   </div>
@@ -24,8 +24,8 @@
   <div class="section">
     <div class="section-head">
       <h2>Últimas notas</h2>
-      <span class="see-all" data-goto="blog">Ver todas →</span>
+      <button class="see-all" data-goto="blog">Ver todas →</button>
     </div>
-    <div class="post-row" id="home-posts"></div>
+    <div class="rail" id="home-posts"></div>
   </div>
 </section>

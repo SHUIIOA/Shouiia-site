@@ -1,5 +1,6 @@
 import { projects } from '../data.js';
 import { showView, onViewChange } from './nav.js';
+import { imgTag, onActivate } from './util.js';
 
 /* ---------------- state ---------------- */
 let grid, filtersEl, detailEl;
@@ -48,14 +49,14 @@ function renderFeaturedRail(){
       <div class="capsule-art" style="${capsuleArtStyle(p)}">
         <span class="tag">${p.tag}</span>
         ${iconFor(p.cat)}
+        ${imgTag(p.image, p.imageAlt, {className:'card-img'})}
       </div>
       <div class="capsule-body">
         <h3>${p.name}</h3>
         <p>${p.short}</p>
         <div class="stack-row">${p.stack.map(s=>`<span class="stack-chip">${s}</span>`).join('')}</div>
       </div>`;
-    el.addEventListener('click', ()=>openProject(p.id));
-    el.addEventListener('keydown', e=>{ if(e.key==='Enter') openProject(p.id); });
+    onActivate(el, ()=>openProject(p.id));
     rail.appendChild(el);
   });
 }
@@ -78,13 +79,16 @@ function renderGrid(){
     el.className = 'card';
     el.tabIndex = 0;
     el.innerHTML = `
-      <div class="capsule-art" style="${capsuleArtStyle(p)}">${iconFor(p.cat)}</div>
+      <div class="capsule-art" style="${capsuleArtStyle(p)}">
+        ${iconFor(p.cat)}
+        ${imgTag(p.image, p.imageAlt, {className:'card-img'})}
+      </div>
       <div class="capsule-body">
         <h3>${p.name}</h3>
         <p>${p.short}</p>
         <div class="stack-row">${p.stack.map(s=>`<span class="stack-chip">${s}</span>`).join('')}</div>
       </div>`;
-    el.addEventListener('click', ()=>openProject(p.id));
+    onActivate(el, ()=>openProject(p.id));
     grid.appendChild(el);
   });
 }
@@ -99,9 +103,10 @@ function openProject(id){
   document.querySelector('#view-projects .page-title').style.display = 'none';
   detailEl.classList.add('active');
   detailEl.innerHTML = `
-    <span class="back-link" id="back-to-projects">← Volver a proyectos</span>
+    <button class="back-link" id="back-to-projects" type="button">← Volver a proyectos</button>
     <div class="detail-banner" style="background:radial-gradient(120% 140% at 30% 20%, ${p.colorA} 0%, ${p.colorB} 40%, #05070f 100%);">
       ${iconFor(p.cat)}
+      ${imgTag(p.image, p.imageAlt, {className:'detail-img', eager:true})}
     </div>
     <div class="detail-head">
       <div>

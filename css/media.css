@@ -1,0 +1,35 @@
+/* ---------- imagenes opcionales ---------- */
+/* Las imagenes son contenido opcional: si el archivo no existe o la ruta
+   esta vacia, la imagen simplemente no se renderiza y queda el fondo
+   (degradado, icono o placeholder) que hay debajo. */
+
+/* imagen sobre el arte de las cards: el icono y el degradado quedan de respaldo */
+.capsule-art img,.detail-banner img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block; z-index:1;
+}
+.capsule-art .tag{z-index:2;}
+
+/* foto de la biografia */
+.about-photo{position:relative; overflow:hidden;}
+.about-photo img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block; z-index:1;
+}
+
+/* portada de la nota */
+.post-cover{
+  margin:18px 0; border:1px solid var(--line); border-radius:var(--radius);
+  overflow:hidden; aspect-ratio:16/9; background:var(--bg-panel);
+}
+.post-cover img{width:100%; height:100%; object-fit:cover; display:block;}
+
+/* banda de portada en la miniatura de la nota */
+.post-art{height:96px; overflow:hidden; border-bottom:1px solid var(--line); background:var(--bg-card);}
+.post-art img{width:100%; height:100%; object-fit:cover; display:block;}
+
+/* imagenes dentro del texto de la nota */
+.post-detail .content img{
+  width:100%; border:1px solid var(--line); border-radius:var(--radius);
+  margin:16px 0; display:block;
+}

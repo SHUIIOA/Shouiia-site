@@ -22,6 +22,9 @@ a:focus-visible, button:focus-visible, .tab:focus-visible, .card:focus-visible{
   outline:2px solid var(--cyan);
   outline-offset:3px;
 }
+/* los paneles de las pestañas son focusables (tabindex=0): indicador
+   discreto por dentro, sin el marco exterior que rompería el layout */
+.view:focus-visible{outline:1px solid var(--cyan-dim); outline-offset:-1px;}
 
 /* ---------- starfield backdrop ---------- */
 #stars{
@@ -41,12 +44,18 @@ main{position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 24
   font-family:'Space Grotesk'; font-weight:500; font-size:14px;
   padding:11px 20px; border-radius:var(--radius); cursor:pointer;
   border:1px solid transparent;
-  display:inline-block; text-align:center;
+  display:inline-flex; align-items:center; justify-content:center; text-align:center;
 }
 .btn-primary{background:#146664; color:#e9eef2;}
-.btn-primary:hover{background:var(--cyan);}
 .btn-ghost{border-color:var(--line); color:var(--text); background:transparent;}
-.btn-ghost:hover{border-color:var(--cyan-dim); color:var(--text);}
+
+/* ---------- shared back link (lo usan proyectos y bitacora) ---------- */
+.back-link{
+  font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--text-dim);
+  cursor:pointer; display:inline-flex; align-items:center; gap:6px;
+  background:none; border:none; padding:10px 0; min-height:44px;
+  text-align:left; margin-bottom:14px;
+}
 
 /* ---------- shared page header (Trayectoria / Proyectos / Bitácora) ---------- */
 .page-title{padding:44px 0 8px;}
@@ -75,3 +84,24 @@ main{position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 24
 .capsule-body{padding:14px 16px 16px;}
 .capsule-body h3{font-size:15.5px; font-weight:600;}
 .capsule-body p{font-size:12.5px; color:var(--text-dim); margin-top:6px;}
+
+/* ---------- tactil: objetivo de toque y feedback ---------- */
+.card,.capsule,.post-mini,.btn,.tab,.filter-chip,.social-link,.back-link,.see-all{
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(23,133,130,.25);
+}
+
+/* ---------- hover solo donde existe hover real (en tactil queda "pegado") ---------- */
+@media (hover:hover){
+  .btn-primary:hover{background:var(--cyan);}
+  .btn-ghost:hover{border-color:var(--cyan-dim); color:var(--text);}
+  .back-link:hover{color:var(--cyan);}
+}
+
+/* ---------- moviles ---------- */
+@media (max-width:560px){
+  main{padding:0 16px 56px;}
+  .btn{min-height:44px;}
+  .page-title{padding:32px 0 6px;}
+  .page-title h2{font-size:24px;}
+}

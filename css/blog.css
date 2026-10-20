@@ -3,7 +3,9 @@
   display:grid; grid-template-columns:110px 1fr; gap:22px;
   padding:22px 0; border-bottom:1px solid var(--line); cursor:pointer;
 }
-.post-entry:hover h3{color:var(--cyan);}
+@media (hover:hover){
+  .post-entry:hover h3{color:var(--cyan);}
+}
 .post-entry .date{font-family:'IBM Plex Mono'; font-size:12px; color:var(--text-faint); padding-top:2px;}
 .post-entry h3{font-size:16.5px; font-weight:600; transition:color .15s ease;}
 .post-entry p{font-size:13.5px; color:var(--text-dim); margin-top:6px;}
@@ -15,3 +17,9 @@
 .post-detail h2{font-size:26px; margin-top:10px;}
 .post-detail .content{margin-top:20px; color:var(--text-dim); font-size:15px;}
 .post-detail .content p{margin-bottom:14px;}
+
+@media (max-width:560px){
+  .post-entry{grid-template-columns:1fr; gap:4px; padding:18px 0;}
+  .post-detail{padding:32px 0 48px;}
+  .post-detail h2{font-size:22px;}
+}

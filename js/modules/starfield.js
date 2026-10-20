@@ -5,7 +5,10 @@ export function startStarfield(){
   let stars = [];
   function resize(){
     canvas.width = window.innerWidth;
-    canvas.height = document.documentElement.scrollHeight;
+    /* El canvas es position:fixed, solo se ve la porcion del viewport.
+       Medirlo con scrollHeight creaba un canvas de 390x4000px en movil
+       que se repintaba entero en cada frame. */
+    canvas.height = window.innerHeight;
     const count = Math.floor((canvas.width * 600) / 9000);
     stars = Array.from({length:count}, ()=>({
       x: Math.random()*canvas.width,

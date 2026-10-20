@@ -19,6 +19,9 @@ export function showView(name, {fromHash=false}={}){
     const on = t.dataset.view === name;
     t.classList.toggle('active', on);
     t.setAttribute('aria-selected', on);
+    /* roving tabindex: solo el tab activo es tabulable,
+       el resto se alcanza con las flechas del teclado */
+    t.tabIndex = on ? 0 : -1;
   });
 
   viewResetters.forEach(fn=>fn(name));
@@ -29,9 +32,27 @@ export function showView(name, {fromHash=false}={}){
 }
 
 export function wireNav(){
-  document.querySelectorAll('.tab').forEach(t=>{
+  const tabs = [...document.querySelectorAll('.tab')];
+
+  tabs.forEach(t=>{
     t.addEventListener('click', ()=>showView(t.dataset.view));
   });
+
+  /* navegacion por teclado del patron WAI-ARIA Tabs */
+  tabs.forEach((tab, i)=>{
+    tab.addEventListener('keydown', e=>{
+      let target = null;
+      if(e.key === 'ArrowRight')     target = tabs[(i+1) % tabs.length];
+      else if(e.key === 'ArrowLeft')  target = tabs[(i-1+tabs.length) % tabs.length];
+      else if(e.key === 'Home')       target = tabs[0];
+      else if(e.key === 'End')        target = tabs[tabs.length-1];
+      if(!target) return;
+      e.preventDefault();
+      showView(target.dataset.view);
+      target.focus();
+    });
+  });
+
   document.querySelectorAll('[data-goto]').forEach(el=>{
     el.addEventListener('click', ()=>showView(el.dataset.goto));
   });
