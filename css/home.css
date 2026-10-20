@@ -11,7 +11,9 @@
 
 /* ---------- about brief (top of home) ---------- */
 .about-brief{
-  display:grid; grid-template-columns:200px 1fr; gap:36px; align-items:start;
+  /* la foto y el texto se centran como un bloque, no pegados a la izquierda */
+  display:grid; grid-template-columns:200px 480px; gap:36px;
+  align-items:start; justify-content:center;
 }
 .about-brief-top{
   padding:64px 0 52px; border-bottom:1px solid var(--line);
