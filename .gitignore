@@ -12,3 +12,15 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Imagenes de assets/img: solo se versionan las formatos optimizados.
+# Evita subir archivos pesados o de trabajo por error (psd, zip, raw...).
+assets/img/**/*
+!assets/img/**/
+!assets/img/**/.gitkeep
+!assets/img/**/*.webp
+!assets/img/**/*.jpg
+!assets/img/**/*.jpeg
+!assets/img/**/*.png
+!assets/img/**/*.avif
+!assets/img/**/*.svg
